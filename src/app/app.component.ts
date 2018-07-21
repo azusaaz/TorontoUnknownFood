@@ -1,10 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+// import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
+// import {enableProdMode} from '@angular/core';
+
+import { PostService } from './post.service';
+import { Post } from './post';
+import { POSTS } from './mock-posts';
+// enableProdMode();
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+ 
 })
-export class AppComponent {
-  title = 'app works!';
+
+
+
+export class AppComponent implements  OnInit {
+
+  
+  title: string = 'Toronot Unknown Food';
+  lat: number = 43.676930;
+  lng: number = -79.389502;
+
+
+  clickedMarker(id: number) {
+    console.log( id)
+
+  }
+
+  selectedPost: Post;
+
+  posts: Post[];
+
+  constructor(private postService: PostService) { }
+
+  ngOnInit() {
+    this.getPosts();
+  }
+
+  onSelect(post: Post): void{
+    this.selectedPost = post;
+    
+  }
+  
+  getPosts(): void {
+    this.postService.getPosts()
+    .subscribe(posts => this.posts = posts); 
+  }
+
+
+
+
+
 }

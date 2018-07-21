@@ -1,0 +1,19 @@
+agm-map {
+  height: 500px;
+ 
+ 
+}
+
+#post-space{
+  height: 800px;
+  max-width: 500px;
+  width: 30%;
+  overflow: scroll;
+  float: left;
+}
+
+
+
+.pic{
+   max-width: 200px;
+}

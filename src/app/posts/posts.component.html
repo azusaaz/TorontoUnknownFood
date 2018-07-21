@@ -1,0 +1,39 @@
+
+
+  <div id=wrapper *ngFor="let post of posts  ">
+      <!-- <div *ngIf="post.id === 0" > -->
+     <!-- {{post.id}} -->
+     <div id={{post.id}}></div>
+     <div class="post-container" [innerHtml]="post.data | safeHtml "></div>
+     <!-- </div> -->
+     
+  </div>
+  <div (click)=buttonClicked()>aaaa
+  <div *ngIf="check()">
+    
+    <h1>aaaa</h1>
+  </div>
+
+ 
+      
+  
+  <div *ngIf="post ">
+     
+     <div class="post-container" [innerHtml]="post.data | safeHtml "></div>
+
+     
+  </div>
+</div>
+
+<!-- 
+<div *ngIf="selectedHero">
+<p>
+    posts works for {{selectedPost.id}}
+  </p>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPost.id" placeholder="id">
+    </label>
+  </div>
+</div> -->
+  
