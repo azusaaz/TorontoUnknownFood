@@ -8,12 +8,12 @@ export class ScrollService {
 
   constructor(private _scrollToService: ScrollToService) { }
  
-  public triggerScrollTo(id) {
+  public triggerScrollTo() {
     
  
     const config: ScrollToConfigOptions = {
-      container: 'wrapper',
-      target: '#'+id,
+    
+      target: '#s0',
       duration: 650,
       easing: 'easeOutElastic',
       offset: 20

@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 // import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
 // import {enableProdMode} from '@angular/core';
 
+import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 import { PostService } from './post.service';
 import { Post } from './post';
 import { POSTS } from './mock-posts';
@@ -26,14 +27,21 @@ export class AppComponent implements  OnInit {
 
   clickedMarker(id: number) {
     console.log( id)
+    const config: ScrollToConfigOptions = {
 
+      target: '#s'+id,
+      duration: 650,
+      easing: 'easeOutElastic',
+      offset: 0
+    };
+    this.scrollToService.scrollTo(config);
   }
 
   selectedPost: Post;
 
   posts: Post[];
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private  scrollToService: ScrollToService) { }
 
   ngOnInit() {
     this.getPosts();

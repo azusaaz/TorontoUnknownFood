@@ -43,33 +43,23 @@ export class PostsComponent implements OnInit {
 
   // selectedPost: Post;
 
-  // posts: Post[];
-  posts =  POSTS;
+  posts: Post[];
+//  isSelected(element, index, array){
+//   return (element.id === this.post.id); 
+//  }
+// filter(this.isSelected)
+  getPosts(): void {
+    this.postService.getPosts().subscribe(posts => this.posts = posts); 
+  }
 
 
-  // onSelect(post: Post): void{
-  //   this.selectedPost = post;
-  // }
-  
-
-  // constructor(private postService: PostService) { }
-
-  // getPosts(): void {
-  //   this.postService.getPosts().subscribe(posts => this.posts = posts); 
-  // }
-
-  // ngOnInit() {
-  //   this.getPosts();
-  // }
-  
 
     @Input() post: Post;
   
     
   check(){
     if(this.post){
-      this._scrollToService;
-
+      
     }
       //     console.log("bbbbb");
       // if(document.getElementById("testScript")) 
@@ -80,17 +70,19 @@ export class PostsComponent implements OnInit {
       // testScript.setAttribute("src", "http://www.instagram.com/embed.js");
       // document.body.appendChild(testScript);
   }
-    constructor(private _scrollToService: ScrollToService) {
+    constructor(private postService: PostService, private _scrollToService: ScrollToService) {
 
      }
+
+     
      getScroll(): void {
-      
+      this._scrollToService.scrollTo;
     }
 
     ngOnInit() {
-
+      this.getPosts();
      
     }
   
-  
+
 }
