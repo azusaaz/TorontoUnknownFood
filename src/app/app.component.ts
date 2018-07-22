@@ -1,12 +1,11 @@
 import { Component, OnInit} from '@angular/core';
-// import { GoogleMapsAPIWrapper, AgmMap, LatLngBounds, LatLngBoundsLiteral} from '@agm/core';
-// import {enableProdMode} from '@angular/core';
+import {enableProdMode} from '@angular/core';
 
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 import { PostService } from './post.service';
+
 import { Post } from './post';
-import { POSTS } from './mock-posts';
-// enableProdMode();
+enableProdMode();
 
 @Component({
   selector: 'app-root',
@@ -15,20 +14,15 @@ import { POSTS } from './mock-posts';
  
 })
 
-
-
 export class AppComponent implements  OnInit {
 
-  
-  title: string = 'Toronot Unknown Food';
+  title: string = 'Toronto Unknown Food';
   lat: number = 43.676930;
   lng: number = -79.389502;
 
-
   clickedMarker(id: number) {
-    console.log( id)
-    const config: ScrollToConfigOptions = {
 
+    const config: ScrollToConfigOptions = {
       target: '#s'+id,
       duration: 650,
       easing: 'easeOutElastic',
@@ -37,8 +31,6 @@ export class AppComponent implements  OnInit {
     this.scrollToService.scrollTo(config);
   }
 
-  selectedPost: Post;
-
   posts: Post[];
 
   constructor(private postService: PostService, private  scrollToService: ScrollToService) { }
@@ -46,19 +38,14 @@ export class AppComponent implements  OnInit {
   ngOnInit() {
     this.getPosts();
   }
-
-  onSelect(post: Post): void{
-    this.selectedPost = post;
-    
-  }
-  
   getPosts(): void {
     this.postService.getPosts()
     .subscribe(posts => this.posts = posts); 
   }
 
+  // selectedPost: Post;
 
-
-
-
+  // onSelect(post: Post): void{
+  //   this.selectedPost = post;
+  // }
 }

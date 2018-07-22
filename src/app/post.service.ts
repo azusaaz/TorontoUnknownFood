@@ -4,8 +4,6 @@ import { Observable, of } from 'rxjs';
 import { Post } from './post';
 import { POSTS } from './mock-posts';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

@@ -6,4 +6,3 @@ export class Post {
   genre: string;
   data: string;
 }
-

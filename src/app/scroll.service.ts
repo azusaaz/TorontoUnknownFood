@@ -10,7 +10,6 @@ export class ScrollService {
  
   public triggerScrollTo() {
     
- 
     const config: ScrollToConfigOptions = {
     
       target: '#s0',

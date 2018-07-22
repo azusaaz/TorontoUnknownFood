@@ -1,5 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 agm-map {
-  height: 500px;
+  height: 600px;
  
  
 }
@@ -13,7 +18,25 @@ agm-map {
 }
 
 
+h1{
+  font-family: 'Gaegu', cursive;
+  font-size: 60px;
+}
 
-.pic{
-   max-width: 200px;
+strong{
+  font-weight: bold;
+}
+
+#titlebar {
+  display: flex;
+  align-items: center;
+}
+
+#icon {
+  background-image: url('../icon.jpg');
+  border-radius: 50%;
+  min-height: 60px;
+  min-width: 60px;
+  margin: 0 10px;
+
 }

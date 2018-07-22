@@ -1,1 +1,0 @@
-<script async defer src="http://www.instagram.com/embed.js"></script>

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { PostsComponent } from './posts/posts.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
-import { AppRoutingModule } from './/app-routing.module';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
         AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBwoA3Rqcu2tu2ch0mh2tTzyl4yjhA5pbA'
     }),
-        AppRoutingModule,
         ScrollToModule.forRoot()
         
   ],
