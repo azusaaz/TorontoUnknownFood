@@ -18,99 +18,101 @@
   </div>
 
    <!-- toronto map -->
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
-    <agm-marker #marker *ngFor="let post of posts" (markerClick)="markerClicked(post.id, infoWindow)" [animation]="0" [latitude]="post.lat"
-      [longitude]="post.lng">
-      <agm-info-window #infoWindow>
-        <strong>{{post.name}}</strong>
-        <p>genre: {{post.genre}}</p>
-      </agm-info-window>
-    </agm-marker>
-  </agm-map>
+  <div id="map-space">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+      <agm-marker #marker *ngFor="let post of posts" (markerClick)="markerClicked(post.id, infoWindow)" [animation]="0" [latitude]="post.lat"
+        [longitude]="post.lng">
+        <agm-info-window #infoWindow>
+          <strong>{{post.name}}</strong>
+          <p>genre: {{post.genre}}</p>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
 
-  <!-- filtering checkbox -->
-  <div id="conditions">
+    <!-- filtering checkbox -->
+    <div id="conditions">
 
-     <!-- filtering tags -->
-    <div class="list">
-      <h4>Tag:
-        <!-- <input id="allTags" type="checkbox" (change)="filtering()" checked value="allTags"> All -->
-      </h4>
-      <div class="items tags">
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" [checked]="true" value="#tounknownrestaurant"> #tounknownrestaurant</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowncafe"> #tounknowncafe</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowngrocerystore"> #tounknowngrocerystore</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownevent"> #tounknownevent</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownbakery"> #tounknownbakery</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownpatisserie"> #tounknownpatisserie</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowntogo"> #tounknowntogo</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownsweets"> #tounknownsweets</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowngrocery"> #tounknowngrocery</div>
-        <div>
-          <input class="tag" type="checkbox" (change)="filtering()" checked value="erlicious"> #summerlicious / #winterlicious</div>
+      <!-- filtering tags -->
+      <div class="list">
+        <h4>Tag:
+          <!-- <input id="allTags" type="checkbox" (change)="filtering()" checked value="allTags"> All -->
+        </h4>
+        <div class="items tags">
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" [checked]="true" value="#tounknownrestaurant"> #tounknownrestaurant</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowncafe"> #tounknowncafe</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowngrocerystore"> #tounknowngrocerystore</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownevent"> #tounknownevent</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownbakery"> #tounknownbakery</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownpatisserie"> #tounknownpatisserie</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowntogo"> #tounknowntogo</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownsweets"> #tounknownsweets</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowngrocery"> #tounknowngrocery</div>
+          <div>
+            <input class="tag" type="checkbox" (change)="filtering()" checked value="erlicious"> #summerlicious / #winterlicious</div>
+        </div>
       </div>
-    </div>
 
-    <!-- filtering genres -->
-    <div class="list">
-      <h4>Genre:
-        <!-- <input id="allGenres" type="checkbox" (change)="filtering()" checked value="allGenres"> All -->
-      </h4>
-      <div class="items genres">
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="america"> American </div>
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="brazillian"> Brazilian </div> -->
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="canad"> Canadian </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="cuba"> Cuban </div>
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="denish"> Denish </div> -->
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="egypt"> Egyptian </div>
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="french"> French </div> -->
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="greek"> Greek </div> -->
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="hungalian"> Hungarian </div> -->
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="ital"> Italian </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="israel"> Israeli </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="japan"> Japanese </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="korea"> Korean </div>
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="liberian"> Liberian </div> -->
-        <!-- <div>
-            <input class="genre" type="checkbox" (change)="filtering()" checked value="mexican"> Mexican </div> -->
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="persia"> Persian </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="siria"> Sirian </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="scandinavia"> Scandinavian </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="thai"> Thai </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="mediterranean"> Mediterranean </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="bagel"> Bagel </div>
-        <div>
-          <input class="genre" type="checkbox" (change)="filtering()" checked value="veg"> Veg </div>
+      <!-- filtering genres -->
+      <div class="list">
+        <h4>Genre:
+          <!-- <input id="allGenres" type="checkbox" (change)="filtering()" checked value="allGenres"> All -->
+        </h4>
+        <div class="items genres">
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="america"> American </div>
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="brazillian"> Brazilian </div> -->
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="canad"> Canadian </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="cuba"> Cuban </div>
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="denish"> Denish </div> -->
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="egypt"> Egyptian </div>
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="french"> French </div> -->
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="greek"> Greek </div> -->
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="hungalian"> Hungarian </div> -->
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="ital"> Italian </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="israel"> Israeli </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="japan"> Japanese </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="korea"> Korean </div>
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="liberian"> Liberian </div> -->
+          <!-- <div>
+              <input class="genre" type="checkbox" (change)="filtering()" checked value="mexican"> Mexican </div> -->
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="persia"> Persian </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="siria"> Sirian </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="scandinavia"> Scandinavian </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="thai"> Thai </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="mediterranean"> Mediterranean </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="bagel"> Bagel </div>
+          <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="veg"> Veg </div>
 
+        </div>
       </div>
     </div>
   </div>
@@ -119,7 +121,7 @@
   <footer>
     <div class="wrap">
       <h2>
-        Could I introduce your Restaurant/ Store/ Event officialy? Let me know! </h2>
+        Could I introduce your Restaurant, Store, and Event? Let me know! </h2>
       <h2>&nbsp; >>&nbsp;
 
         <a href="mailto:torontounknownfood@gmail.com">

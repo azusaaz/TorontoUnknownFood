@@ -4,18 +4,18 @@
 }
 
 agm-map {
-  height: 700px;
+  height: 35rem;
 
 }
 
 #main-content {
-  height: 900px;
+  /* height: 900px; */
 }
 
 #post-space {
-  height: 900px;
-  max-width: 500px;
-  min-width: 190px;
+  height: 45rem;
+  max-width: 22rem;
+  min-width: 9.7rem;
   width: 30%;
   overflow: scroll;
   float: left;
@@ -23,16 +23,16 @@ agm-map {
 
 h1 {
   font-family: 'Gaegu', cursive;
-  font-size: 60px;
-  margin-left: 15px;
+  font-size: 3rem;
+  margin-left: 0.75rem;
 }
 
 h1 span {
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 1.25rem;
 }
 
 strong {
@@ -50,39 +50,49 @@ strong {
     text-align: center;
   }
   h1 span {
-    font-size: 25px;
+    font-size: 1.25rem;
   }
+  #post-space {
+
+    min-width: 100%;
+    float: none;
+  }
+
+  #map-space{
+    max-width: 100%;
+  }
+
 }
 
 #icon {
-  width: 60px;
-  height: 60px;
+  width: 3rem;
+  height: 3rem;
 }
 
 #conditions {
   display: flex;
-  height: 200px;
-  opacity: 0.5;
+  height: 10rem;
+  color: #777;
   border-bottom: 1px solid grey;
-  font-size: 22px;
+  font-size: 1.1rem;
   overflow: auto;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  margin: 8px;
+  margin: 0.4rem;
   width: 50%;
-  min-width: 630px;
+  min-width: 31.5rem;
 }
 
 .list h4 {
-  margin: 4px 2px;
-  padding-bottom: 8px;
+  margin: 0.2rem 0.1rem;
+  padding-bottom: 0.4rem;
 }
 
 .list>div {
-  margin: 0 0px;
+  margin: 0 0;
 }
 
 .items {
@@ -92,29 +102,30 @@ strong {
 }
 
 footer {
-  height: 300px;
+  height: 15rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  float: none;
 }
 
 .wrap {
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
 footer i {
   color: grey;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  font-size: 30px;
-  margin-right: 5px;
+  width: 2.25rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  font-size: 1.5rem;
+  margin-right: 0.13rem;
 }
 
 footer p {
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 footer i:hover {
