@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tu0-official-ang-hero": {
+    "torontounknownfood": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tu0-official-ang-hero",
+            "outputPath": "dist/torontounknownfood",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "tu0-official-ang-hero:build"
+            "browserTarget": "torontounknownfood:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "tu0-official-ang-hero:build:production"
+              "browserTarget": "torontounknownfood:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tu0-official-ang-hero:build"
+            "browserTarget": "torontounknownfood:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "tu0-official-ang-hero-e2e": {
+    "torontounknownfood-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "tu0-official-ang-hero:serve"
+            "devServerTarget": "torontounknownfood:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "tu0-official-ang-hero:serve:production"
+              "devServerTarget": "torontounknownfood:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "tu0-official-ang-hero"
+  "defaultProject": "torontounknownfood"
 }

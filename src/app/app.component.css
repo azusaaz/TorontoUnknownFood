@@ -1,29 +1,41 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 agm-map {
-  height: 600px;
- 
- 
+  height: 700px;
+
 }
 
-#post-space{
-  height: 800px;
+#main-content {
+  height: 900px;
+}
+
+#post-space {
+  height: 900px;
   max-width: 500px;
+  min-width: 190px;
   width: 30%;
   overflow: scroll;
   float: left;
 }
 
-
-h1{
+h1 {
   font-family: 'Gaegu', cursive;
   font-size: 60px;
+  margin-left: 15px;
 }
 
-strong{
+h1 span {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+strong {
   font-weight: bold;
 }
 
@@ -32,11 +44,79 @@ strong{
   align-items: center;
 }
 
-#icon {
-  background-image: url('../icon.jpg');
-  border-radius: 50%;
-  min-height: 60px;
-  min-width: 60px;
-  margin: 0 10px;
+@media only screen and (max-width: 600px) {
+  #titlebar {
+    flex-direction: column;
+    text-align: center;
+  }
+  h1 span {
+    font-size: 25px;
+  }
+}
 
+#icon {
+  width: 60px;
+  height: 60px;
+}
+
+#conditions {
+  display: flex;
+  height: 200px;
+  opacity: 0.5;
+  border-bottom: 1px solid grey;
+  font-size: 22px;
+  overflow: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  width: 50%;
+  min-width: 630px;
+}
+
+.list h4 {
+  margin: 4px 2px;
+  padding-bottom: 8px;
+}
+
+.list>div {
+  margin: 0 0px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+footer {
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  margin-bottom: 40px;
+}
+
+footer i {
+  color: grey;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+footer p {
+  font-size: 20px;
+}
+
+footer i:hover {
+  color: coral;
 }

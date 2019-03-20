@@ -1,30 +1,134 @@
+<!-- header -->
 <div id="titlebar">
-<div id="icon"></div>
-<h1>{{ title }}</h1>
+  <a href="https://www.instagram.com/torontounknownfood/">
+    <img src="../assets/unknown_logo_lec.png" id="icon" alt="icon">
+  </a>
+
+  <h1>Toronto Unknown Food
+    <span>- Food World Trip in Toronto! -</span>
+  </h1>
 </div>
 
-<div id="post-space">
-<app-posts ></app-posts>
-</div>
+<!-- main-content -->
+<div id="main-content">
 
-<agm-map  
-[latitude]="lat" 
-[longitude]="lng"
-[zoom]="11"
->
-  <agm-marker
-    *ngFor="let post of posts" 
-    (markerClick)="clickedMarker(post.id); gm.lastOpen?.close(); gm.lastOpen = infoWindow; markerClicked(m);"
+  <!-- instagram space -->
+  <div id="post-space">
+    <app-posts></app-posts>
+  </div>
 
-    [latitude]="post.lat" 
-    [longitude]="post.lng"
-    >
-      <agm-info-window>
+   <!-- toronto map -->
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+    <agm-marker #marker *ngFor="let post of posts" (markerClick)="markerClicked(post.id, infoWindow)" [animation]="0" [latitude]="post.lat"
+      [longitude]="post.lng">
+      <agm-info-window #infoWindow>
         <strong>{{post.name}}</strong>
         <p>genre: {{post.genre}}</p>
       </agm-info-window>
     </agm-marker>
-</agm-map>
+  </agm-map>
 
+  <!-- filtering checkbox -->
+  <div id="conditions">
 
+     <!-- filtering tags -->
+    <div class="list">
+      <h4>Tag:
+        <!-- <input id="allTags" type="checkbox" (change)="filtering()" checked value="allTags"> All -->
+      </h4>
+      <div class="items tags">
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" [checked]="true" value="#tounknownrestaurant"> #tounknownrestaurant</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowncafe"> #tounknowncafe</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowngrocerystore"> #tounknowngrocerystore</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownevent"> #tounknownevent</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownbakery"> #tounknownbakery</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownpatisserie"> #tounknownpatisserie</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowntogo"> #tounknowntogo</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknownsweets"> #tounknownsweets</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="#tounknowngrocery"> #tounknowngrocery</div>
+        <div>
+          <input class="tag" type="checkbox" (change)="filtering()" checked value="erlicious"> #summerlicious / #winterlicious</div>
+      </div>
+    </div>
 
+    <!-- filtering genres -->
+    <div class="list">
+      <h4>Genre:
+        <!-- <input id="allGenres" type="checkbox" (change)="filtering()" checked value="allGenres"> All -->
+      </h4>
+      <div class="items genres">
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="america"> American </div>
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="brazillian"> Brazilian </div> -->
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="canad"> Canadian </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="cuba"> Cuban </div>
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="denish"> Denish </div> -->
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="egypt"> Egyptian </div>
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="french"> French </div> -->
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="greek"> Greek </div> -->
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="hungalian"> Hungarian </div> -->
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="ital"> Italian </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="israel"> Israeli </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="japan"> Japanese </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="korea"> Korean </div>
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="liberian"> Liberian </div> -->
+        <!-- <div>
+            <input class="genre" type="checkbox" (change)="filtering()" checked value="mexican"> Mexican </div> -->
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="persia"> Persian </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="siria"> Sirian </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="scandinavia"> Scandinavian </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="thai"> Thai </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="mediterranean"> Mediterranean </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="bagel"> Bagel </div>
+        <div>
+          <input class="genre" type="checkbox" (change)="filtering()" checked value="veg"> Veg </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="wrap">
+      <h2>
+        Could I introduce your Restaurant/ Store/ Event officialy? Let me know! </h2>
+      <h2>&nbsp; >>&nbsp;
+
+        <a href="mailto:torontounknownfood@gmail.com">
+          <i class="far fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/torontounknownfood/">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </h2>
+    </div>
+    <p>2018 @ TorontoUnknownFood</p>
+  </footer>

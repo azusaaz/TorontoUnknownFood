@@ -8,6 +8,8 @@ import { AgmCoreModule } from '@agm/core';
 import { PostsComponent } from './posts/posts.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { environment } from '../environments/environment'
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     FormsModule,
     HttpModule,
         AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBwoA3Rqcu2tu2ch0mh2tTzyl4yjhA5pbA'
+      apiKey: environment['apiKey']
     }),
         ScrollToModule.forRoot()
         
